@@ -16,6 +16,7 @@ function App() {
   const [allHeld,setAllHeld] = useState(false)
   const [isCorrectAnswer,setIsCorrectAnswer] = useState(0)
   const [checkAllAnswers,setCheckAllAnswers] = useState(false)
+  const [resetQuiz,setResetQuiz] = useState(0)
   const [isLoading,setIsLoading] = useState(true)
   console.log(ques)
   console.log(isCorrectAnswer)
@@ -71,7 +72,7 @@ const {amountOfQuestions,category, difficulty} = formData;
     })
     .catch(err => console.log(err.message))
     .finally(() => setIsLoading(false))
-  },[amountOfQuestions,category,difficulty])
+  },[resetQuiz,amountOfQuestions,category,difficulty])
 
   //  this useEffect tracks if all isHeld
   useEffect(() => {
@@ -126,6 +127,12 @@ const {amountOfQuestions,category, difficulty} = formData;
   function changeTrue(){
     setCheckAllAnswers(prev => !prev)
   }
+  function reset(){
+    setCheckAllAnswers(prev => !prev)
+    setHome(prev => !prev)
+    setAllHeld(prev => !prev)
+    setResetQuiz(prev => prev + 1)
+  }
   // if allHeld state is false, isButtonDisabled will be set to true(so button will be disabled) & vice versa
   let isButtonDisabled = !allHeld
     return (
@@ -140,7 +147,7 @@ const {amountOfQuestions,category, difficulty} = formData;
             {!home && <div className="utility">
               {quiz}
               {checkAllAnswers ?
-               <Reset isCorrectAnswer={isCorrectAnswer} questionLength={ques}/> :
+               <Reset isCorrectAnswer={isCorrectAnswer} questionLength={ques} handleClick={reset}/> :
                <button className="quiz-btn btn"
                onClick={changeTrue}
                disabled={isButtonDisabled}
