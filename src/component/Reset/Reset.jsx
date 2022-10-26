@@ -1,17 +1,18 @@
 import './Reset.scss'
 
-const Reset = ({setCheckAllAnswers,setHome,setAllHeld,setResetQuiz,totalScore,question}) => {
+const Reset = ({setCheckAllAnswers,setHome,setAllHeld,setResetQuiz,totalScore,question,setIsLoading}) => {
     function reset(){
         setCheckAllAnswers(prev => !prev)
         setHome(prev => !prev)
         setAllHeld(prev => !prev)
         setResetQuiz(prev => prev + 1)
+        setIsLoading(prev => !prev)
       }
 
     return ( 
-        <div>
+        <div className='reset'>
             <h4>You scored {totalScore}/{question.length}</h4>
-            <button className="quiz-btn btn" onClick={reset}>Reset Game</button>
+            <button className="quiz-btn btn" onClick={reset}>Play Again</button>
         </div>
      );
 }

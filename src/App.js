@@ -54,6 +54,7 @@ const {amountOfQuestions,category, difficulty} = formData;
     fetch(apiLink)
     .then(res => res.json())
     .then(data => {
+      console.log(data.results)
       let val = data.results.map(obj => {
         //add both the correct & incorrect answers to to an array
         let incorrect_answers = [...obj.incorrect_answers].map(answer => (
@@ -63,6 +64,11 @@ const {amountOfQuestions,category, difficulty} = formData;
         let arr = [...incorrect_answers,correct_answer]
         //shuffle the array 
         let shuffled = arr.sort((a, b) => 0.5 - Math.random())
+
+        // if the question type is a boolean,use the length to sort so that 'True' will always be the first answer option
+        // else just return the shuffled array
+        shuffled = obj.type === "boolean" ? shuffled.sort((a,b) => a.value.length - b.value.length) : shuffled
+
         //add the shuffled array into the object
         return {...obj,correct_answer:correct_answer,question:he.decode(obj.question),shuffled:shuffled,id: nanoid()}
       })
@@ -70,7 +76,10 @@ const {amountOfQuestions,category, difficulty} = formData;
 
     })
     .catch(err => console.log(err.message))
-    .finally(() => setIsLoading(false))
+    .finally(() => setTimeout(() => {
+      setIsLoading(false)
+    },1000))
+
   },[resetQuiz,amountOfQuestions,category,difficulty])
 
   //  this useEffect tracks if all isHeld
@@ -140,7 +149,7 @@ const {amountOfQuestions,category, difficulty} = formData;
             }
             {!home && <div className="utility">
               {isLoading && <Loading />}
-              {quiz}
+              {!isLoading && quiz}
               {checkAllAnswers ?
                <Reset 
                   setCheckAllAnswers={setCheckAllAnswers}
@@ -148,7 +157,8 @@ const {amountOfQuestions,category, difficulty} = formData;
                   setAllHeld={setAllHeld}
                   setResetQuiz={setResetQuiz}
                   totalScore={totalScore} 
-                  question={ques} 
+                  question={ques}
+                  setIsLoading={setIsLoading}
                   //handleClick={reset}
                 /> 
                 :

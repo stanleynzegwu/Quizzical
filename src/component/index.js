@@ -1,3 +1,4 @@
+export { default as About } from './About/About'
 export { default as Home } from './Home/Home'
 export { default as Loading } from './Loading/Loading'
 export { default as Quiz } from './Quiz/Quiz'
