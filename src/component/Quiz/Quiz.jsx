@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 import { nanoid } from 'nanoid'
+import './Quiz.scss'
 
 export default function Quiz({qID,question,allAnswers,updateHeld,checkAllAnswers}){
     
@@ -16,7 +17,7 @@ export default function Quiz({qID,question,allAnswers,updateHeld,checkAllAnswers
                             let style = checkAllAnswers ? endOfGame : isHeld
                           return <button 
                           onClick={() => updateHeld(qID,answerObj.id)}
-                          //if you have clicked to check all answers, then each anser button will be diabled so it can't be changed.
+                          //if you have clicked to check all answers, then each answer button will be diabled so it can't be changed.
                           disabled={checkAllAnswers ? true : false}
                           key={nanoid()}
                           className={`${style} answer`}

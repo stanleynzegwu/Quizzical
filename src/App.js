@@ -1,9 +1,8 @@
 import {useState,useEffect} from "react"
-import Home from "./component/Home"
-import Quiz from "./component/Quiz"
-import Reset from "./component/Reset"
+import { Home, Loading, Quiz,Reset } from './component'
 import { nanoid } from 'nanoid'
 import he from "he"
+import './App.scss'
 
 function App() {
   const [home,setHome] = useState(true)
@@ -14,12 +13,12 @@ function App() {
     difficulty:""
   })
   const [allHeld,setAllHeld] = useState(false)
-  const [isCorrectAnswer,setIsCorrectAnswer] = useState(0)
+  const [totalScore,setTotalScore] = useState(0)
   const [checkAllAnswers,setCheckAllAnswers] = useState(false)
   const [resetQuiz,setResetQuiz] = useState(0)
   const [isLoading,setIsLoading] = useState(true)
   console.log(ques)
-  console.log(isCorrectAnswer)
+  console.log(totalScore)
 
 //when you click you show the quiz screen
 function changeHome(){
@@ -83,12 +82,12 @@ const {amountOfQuestions,category, difficulty} = formData;
       setAllHeld(true)
     }
 
-    let answeredCorrectly = ques && ques.map(({shuffled}) => {
+    let score = ques && ques.map(({shuffled}) => {
       return shuffled.map(({isHeld,isCorrect}) => isHeld && isCorrect ? 1 : 0).reduce((acc,cu) => {
         return acc + cu
       },0)
     }).reduce((acc,cu) => acc + cu,0)
-    setIsCorrectAnswer(answeredCorrectly)
+    setTotalScore(score)
 
     
   },[ques])
@@ -127,12 +126,7 @@ const {amountOfQuestions,category, difficulty} = formData;
   function changeTrue(){
     setCheckAllAnswers(prev => !prev)
   }
-  function reset(){
-    setCheckAllAnswers(prev => !prev)
-    setHome(prev => !prev)
-    setAllHeld(prev => !prev)
-    setResetQuiz(prev => prev + 1)
-  }
+  
   // if allHeld state is false, isButtonDisabled will be set to true(so button will be disabled) & vice versa
   let isButtonDisabled = !allHeld
     return (
@@ -145,12 +139,23 @@ const {amountOfQuestions,category, difficulty} = formData;
               </div>
             }
             {!home && <div className="utility">
+              {isLoading && <Loading />}
               {quiz}
               {checkAllAnswers ?
-               <Reset isCorrectAnswer={isCorrectAnswer} questionLength={ques} handleClick={reset}/> :
+               <Reset 
+                  setCheckAllAnswers={setCheckAllAnswers}
+                  setHome={setHome}
+                  setAllHeld={setAllHeld}
+                  setResetQuiz={setResetQuiz}
+                  totalScore={totalScore} 
+                  question={ques} 
+                  //handleClick={reset}
+                /> 
+                :
                <button className="quiz-btn btn"
                onClick={changeTrue}
                disabled={isButtonDisabled}
+               style={isLoading ? {display:'none'} : {display:'block'}}
                >
                  Check answers
                  </button>

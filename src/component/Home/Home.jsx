@@ -1,3 +1,5 @@
+import './Home.scss'
+
 export default function Home({handleClick,handleChange,formData}){
     return (
         <div className="home">
