@@ -63,12 +63,9 @@
   justify-content: center;
   width:95vw;
   border-radius: 1rem;
-  background-color:#F5F7FB;
+  background-color:#fdfdff;
   margin:1.5rem auto;
-}
-
-.quiz:not(:last-child){
-  border-bottom: 1px solid #DBDEF0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .quiz{
@@ -82,6 +79,9 @@
   width: 90vw;
   text-align: center;
   color: #293264;
+}
+.quiz__answer-holder {
+  border-bottom: 1px solid #DBDEF0;
 }
 
 .answer{

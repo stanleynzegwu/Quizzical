@@ -6,8 +6,19 @@
         }
 
         .quiz__answer-holder {
-            text-align: center;
+            //text-align: center;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            width: 90%;
+
+
+            .answer:last-child{
+                margin-bottom: 5px;
+              }
         }
+    
     }
     
 
