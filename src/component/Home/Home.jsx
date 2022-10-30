@@ -1,6 +1,18 @@
 import './Home.scss'
 
-export default function Home({handleClick,handleChange,formData}){
+export default function Home({handleClick,formData,setFormData}){
+//,handleChange
+//handle form
+function handleChange(e){
+    const {name, value} = e.target;
+
+          setFormData(prev => {
+              return {
+                  ...prev, [name] : value
+              }
+          })
+  }
+
     return (
         <div className="home">
             <h1 className="home__h1">Quizzical</h1>

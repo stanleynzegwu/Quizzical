@@ -1,24 +1,56 @@
 .quiz {
     
-    @media screen and (max-width:457px){
+    @media screen and (max-width:768px){
         .quiz__heading {
+            font-family: Catamaran;
+            font-weight: 600;
             font-size: 1rem
         }
 
-        .quiz__answer-holder {
-            //text-align: center;
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
+        // .quiz__answer-holder.multiple {
+        //     //text-align: center;
+        //     display: grid;
+        //     grid-template-rows: 1fr 1fr;
+        //     grid-template-columns: 1fr 1fr;
+        //     gap: 5px;
+        //     width: 90%;
+
+
+        //     .answer:last-child{
+        //         margin-bottom: 5px;
+
+        //       }
+
+        //     }
+        }
+        @media screen and (max-width:500px){
+
+            .quiz__answer-holder.multiple {
+                //text-align: center;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+                width: 90%;
+    
+    
+                .answer:last-child{
+                    margin-bottom: 5px;
+    
+                  }
+    
+                }
+            }
+
+        .quiz__answer-holder.boolean {
+            text-align: center;
             width: 90%;
 
 
             .answer:last-child{
                 margin-bottom: 5px;
-              }
         }
-    
+        
     }
     
 

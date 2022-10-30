@@ -25,17 +25,6 @@ function changeHome(){
   setHome(prev => !prev)
 }
 
-//handle form
-function handleFormChange(e){
-  const {name, value} = e.target;
-        
-        setFormData(prev => {
-            return {
-                ...prev, [name] : value
-            }
-        })
-}
-
 //this useEffect tracks the questions to be set
 const {amountOfQuestions,category, difficulty} = formData;
 
@@ -47,6 +36,8 @@ const {amountOfQuestions,category, difficulty} = formData;
       apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}&difficulty=${difficulty}`
     }else if(amountOfQuestions !== "" && category === "" && difficulty === ""){
       apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}`
+    }else if(amountOfQuestions !== "" && category !== "" && difficulty === ""){
+      apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}&category=${category}`
     }else{
       apiLink = 'https://opentdb.com/api.php?amount=5'
     }
@@ -78,7 +69,7 @@ const {amountOfQuestions,category, difficulty} = formData;
     .catch(err => console.log(err.message))
     .finally(() => setTimeout(() => {
       setIsLoading(false)
-    },1000))
+    },1500))
 
   },[resetQuiz,amountOfQuestions,category,difficulty])
 
@@ -142,12 +133,12 @@ const {amountOfQuestions,category, difficulty} = formData;
         <main>
             {home && <div className='main-home'>
               <Home handleClick={changeHome} 
-              handleChange={handleFormChange}
               formData={formData}
+              setFormData={setFormData}
               />
               </div>
             }
-            {!home && <div className="utility">
+            {!home && <div className="utility" style={{height:isLoading ? '95vh' : '100%'}}>
               {isLoading && <Loading />}
               {!isLoading && quiz}
               {checkAllAnswers ?

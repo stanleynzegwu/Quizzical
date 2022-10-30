@@ -62,6 +62,7 @@
   /* margin: 20px; */
   justify-content: center;
   width:95vw;
+  /* height: 100%; */
   border-radius: 1rem;
   background-color:#fdfdff;
   margin:1.5rem auto;
@@ -76,6 +77,7 @@
 
 }
 .quiz__heading{
+  font-family: Catamaran;
   width: 90vw;
   text-align: center;
   color: #293264;
@@ -128,17 +130,39 @@ select:hover{
 }
 .correct{
   background-color: rgb(38, 216, 157);
+  pointer-events: none;
+  border: none;
+}
+.correct:hover{
+  pointer-events: none;
   border: none;
 }
 .inCorrect{
-  background-color: rgb(219, 155, 155);
+  background-color: rgb(238, 129, 129);
+  pointer-events: none;
+  border: none;
+}
+.inCorrect:hover{
+  pointer-events: none;
   border: none;
 }
 .correctButUnheld{
   background-color: rgb(185, 248, 227);
+  pointer-events: none;
   border: none;
 }
-
+.correctButUnheld:hover{
+  pointer-events: none;
+  border: none;
+}
+.nothing{
+  pointer-events: none;
+  opacity: 0.5;
+}
+.nothing:hover{
+    pointer-events: none;
+    opacity: 0.3;
+}
 .isHeld {
   background-color: #8d93b3;
   border: none;

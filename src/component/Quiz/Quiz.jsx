@@ -2,11 +2,11 @@ import {useState,useEffect} from 'react'
 import { nanoid } from 'nanoid'
 import './Quiz.scss'
 
-export default function Quiz({qID,question,allAnswers,updateHeld,checkAllAnswers}){
+export default function Quiz({qID,question,allAnswers,updateHeld,checkAllAnswers,type}){
     
     let quiz = <div className="quiz">
                     <h3 className="quiz__heading">{question}</h3>
-                    <div className="quiz__answer-holder">
+                    <div className={`quiz__answer-holder ${type === 'boolean' ?  'boolean' : 'multiple'}`}>
                         {allAnswers.map(answerObj => {
                             let isHeld = answerObj.isHeld ? 'isHeld' : 'notHeld'
                             let endOfGame = answerObj.isHeld && answerObj.isCorrect ? 'correct' : 
