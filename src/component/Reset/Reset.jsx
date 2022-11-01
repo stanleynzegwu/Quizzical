@@ -11,8 +11,12 @@ const Reset = ({setCheckAllAnswers,setHome,setAllHeld,setResetQuiz,totalScore,qu
 
     return ( 
         <div className='reset'>
-            <h4>You scored {totalScore}/{question.length}</h4>
-            <button className="quiz-btn btn" onClick={reset}>Play Again</button>
+            <div className='reset__div reset__text'>
+                <h4 className='reset-h4'>You scored {totalScore}/{question.length}</h4>
+            </div>
+            <div className='reset__div reset__btn'>
+                <button className="quiz-btn btn" onClick={reset}>Play Again</button>
+            </div>
         </div>
      );
 }

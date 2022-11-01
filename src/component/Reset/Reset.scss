@@ -3,12 +3,26 @@
     justify-content: center;
     align-items: center;
 
+    .reset__text{
+        margin-right: 5%;
+
+        @media screen and (min-width:768px){
+                .reset-h4{
+                    font-size: 1.4rem;
+                }
+        }
+    }
+    .reset__btn{
+        margin-left: 5%;
+
+        @media screen and (min-width:768px) {
+            .quiz-btn {
+                width: 200px;
+                font-size: 1.3rem;
+            }
+        }
+    }
     
-    h4 {
-        display: inline-block;
-    }
-    button {
-        display: inline-block;
-    }
+    
 }
 

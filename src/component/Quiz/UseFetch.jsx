@@ -5,12 +5,12 @@
 // const UseFetch = (formData) => {
 
 // const [data,setData] = useState(null)
-// const [isLoading,setIsLoading] = useState(true)
+// const [isLoadingg,setIsLoading] = useState(true)
 // const {amountOfQuestions,category, difficulty} = formData;
 
-//     useEffect(() => {
+// useEffect(() => {
 
-//       let apiLink
+//  let apiLink
 // if(amountOfQuestions !== "" && category !== "" && difficulty !== ""){
 //   apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}&category=${category}&difficulty=${difficulty}`
 // }else if(amountOfQuestions !== "" && category === '' && difficulty !== ""){
@@ -54,7 +54,7 @@
 
 
 //     return ( 
-//        {data,isLoading}
+//        {data,isLoadingg}
 //      );
 // }
  

@@ -22,6 +22,8 @@
 }
 .home__p{
   color:#293264;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .btn{
@@ -108,8 +110,12 @@
   cursor: pointer;
 }
 .form {
+  display: flex;
   margin: 20px;
   font-size:1.5rem
+}
+.form__label{
+  width: 50%;
 }
 .custom-label{
   margin-right: 20px;
@@ -124,6 +130,11 @@ select{
   border: none;
   cursor: pointer;
   color: #293264;
+  width: 250px;
+  /* width:100% */
+}
+.form__select {
+  width: 50%;
 }
 select:hover{
   background-color: rgb(240, 234, 234);

@@ -16,9 +16,11 @@ function App() {
   const [totalScore,setTotalScore] = useState(0)
   const [checkAllAnswers,setCheckAllAnswers] = useState(false)
   const [resetQuiz,setResetQuiz] = useState(0)
+  const [error,setError] = useState(0)
   const [isLoading,setIsLoading] = useState(true)
   console.log(ques)
   console.log(totalScore)
+  console.log(isLoading)
 
 //when you click you show the quiz screen
 function changeHome(){
@@ -64,12 +66,15 @@ const {amountOfQuestions,category, difficulty} = formData;
         return {...obj,correct_answer:correct_answer,question:he.decode(obj.question),shuffled:shuffled,id: nanoid()}
       })
       setQuestion(val)
-
+      setError('')
+      setTimeout(() => {
+        setIsLoading(false)
+      },2500)
     })
-    .catch(err => console.log(err.message))
-    .finally(() => setTimeout(() => {
-      setIsLoading(false)
-    },1500))
+    .catch(err => setError(err.message))
+    // .finally(() => setTimeout(() => {
+    //   setIsLoading(false)
+    // },1500))
 
   },[resetQuiz,amountOfQuestions,category,difficulty])
 
@@ -139,7 +144,7 @@ const {amountOfQuestions,category, difficulty} = formData;
               </div>
             }
             {!home && <div className="utility" style={{height:isLoading ? '95vh' : '100%'}}>
-              {isLoading && <Loading />}
+              {isLoading && <Loading error={error}/>}
               {!isLoading && quiz}
               {checkAllAnswers ?
                <Reset 

@@ -1,0 +1,12 @@
+.form{
+
+    .form__select {
+        
+        @media screen and (max-width:550px){
+            width: 100%;
+            select {
+                width: 100%;
+            }
+        }
+    }
+}
