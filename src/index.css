@@ -185,3 +185,7 @@ select:hover{
   background-color: #8d93b3;
   border: none;
 }
+.btnNotAllHeld{
+  pointer-events: none;
+  background-color: #bfc3df;
+}

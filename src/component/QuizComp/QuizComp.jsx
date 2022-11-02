@@ -1,11 +1,15 @@
 import { useState,useEffect } from 'react'
+//import ReactTooltip from 'react-tooltip'
 import { nanoid } from 'nanoid'
+
 import { Quiz,Reset} from '../index'
+
 const QuizComp = ({ques,updateHeld,checkAllAnswers,isLoading,setCheckAllAnswers,setHome,setResetQuiz,setIsLoading}) => {
+
 //,allHeld,setAllHeld,totalScore,setTotalScore
 const [allHeld,setAllHeld] = useState(false)
 const [totalScore,setTotalScore] = useState(0)
-
+console.log(ques,allHeld)
      function changeTrue(){
           setCheckAllAnswers(prev => !prev)
      }
@@ -59,13 +63,15 @@ let isButtonDisabled = !allHeld
                   setIsLoading={setIsLoading}
                />
                :
-               <button className="quiz-btn btn"
-               onClick={changeTrue}
-               disabled={isButtonDisabled}
-               style={isLoading ? {display:'none'} : {display:'block'}}
-               >
-                 Check answers
-               </button>
+               <>
+                  <button className={`quiz-btn btn ${!allHeld ? "btnNotAllHeld" : ''}`}
+                    onClick={changeTrue}
+                    disabled={isButtonDisabled}
+                    style={isLoading ? {display:'none'} : {display:'block'}}
+                    >
+                    Check answers
+                  </button>
+               </>
              }
              
         </>

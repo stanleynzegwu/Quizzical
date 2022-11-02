@@ -30,7 +30,7 @@ const {amountOfQuestions,category, difficulty} = formData;
     let apiLink
     if(amountOfQuestions !== "" && category !== "" && difficulty !== ""){
       apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}&category=${category}&difficulty=${difficulty}`
-    }else if(amountOfQuestions !== "" && category === '' && difficulty !== ""){
+    }else if(amountOfQuestions !== "" && (category === '' || category === 'Any') && (difficulty !== "")){
       apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}&difficulty=${difficulty}`
     }else if(amountOfQuestions !== "" && category === "" && difficulty === ""){
       apiLink = `https://opentdb.com/api.php?amount=${amountOfQuestions}`
