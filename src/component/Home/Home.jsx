@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion'
+
+import { About } from '../index'
 import './Home.scss'
 
 export default function Home({handleClick,formData,setFormData}){
-//,handleChange
 //handle form
 function handleChange(e){
     const {name, value} = e.target;
@@ -14,7 +16,11 @@ function handleChange(e){
   }
 
     return (
-        <div className="home">
+        <motion.div
+            className="home"
+            whileInView={{ x: [-100,0], opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}
+        >
             <h1 className="home__h1">Quizzical</h1>
             <p className="home__p">Test your knowledge by answering the questions</p>
             
@@ -96,8 +102,8 @@ function handleChange(e){
                     </div>
                 </div>
             </form>
-            <button onClick={handleClick}className="home__btn btn">Start quiz
-            </button>
-        </div>
+            <button onClick={handleClick} className="home__btn btn">Start quiz</button>
+            <About />
+        </motion.div>
     )
 }

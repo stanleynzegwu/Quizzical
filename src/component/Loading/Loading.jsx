@@ -9,8 +9,8 @@ const Loading = ({ error }) => {
     return ( 
       error ? 
         <div className='error'>
-          <p>OOPS...</p>
-          <p>An error occured try again.</p>
+          <p className='error__p1'>OOPS...</p>
+          <p className='error__p2'>An error occured try again.</p>
         </div>
       :
         <div className='loading'>

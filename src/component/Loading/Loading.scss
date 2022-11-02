@@ -7,3 +7,27 @@
     align-items: center;
     justify-content: center;
 }
+
+.error {
+    .error__p1{
+        font-size: 4rem;
+        font-weight: 900;
+        color: rgb(186, 41, 41);
+
+        @media screen and (max-width:450px) {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+
+    .error__p2{
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(136, 135, 135);
+
+        @media screen and (max-width:450px) {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+}

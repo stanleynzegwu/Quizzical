@@ -1,4 +1,3 @@
-import {useState,useEffect} from 'react'
 import { nanoid } from 'nanoid'
 import './Quiz.scss'
 

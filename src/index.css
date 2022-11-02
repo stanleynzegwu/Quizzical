@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+html{
+  font-size: 100%;
+  
+}
+
 
 .main-home{
   width: 95vw;
@@ -56,7 +61,9 @@
 }
 .quiz-btn{
   width: 150px;
-  margin: 0 auto;
+  margin: 3% auto;
+  /* margin-bottom: 2%; */
+  
 }
 .utility{
   display:flex;
@@ -85,7 +92,7 @@
   color: #293264;
 }
 .quiz__answer-holder {
-  border-bottom: 1px solid #DBDEF0;
+  border-bottom: 1px solid #b6b9c6;
 }
 
 .answer{
