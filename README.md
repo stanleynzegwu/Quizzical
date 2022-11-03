@@ -1,68 +1,26 @@
 # Quizzical
 
-Quiz WebApp that access trivia questions from the Open Trivia Database API and score players based on their answers. Multiple game options like difficulty and category are available for the player to change.
+Quiz WebApp that access trivia questions from the Open Trivia Database API and score players based on their answers. The player have multiple game options to choose from - the number of questions, category, and difficulty or the default option if non of the options was selected.
 
 This is the final Solo Project of Bob Ziroll's React Course on Scrimba developed from scratch by me.
 Link to project: https://quizzical-p.netlify.app/
 
 ## ⚒️Built With:
 
-HTML 5
-CSS 3
-JavaScript
-React - JS library
+* HTML 5
+* CSS 3<br>
+* JavaScript<br>
+* React - JS library
 
-### `npm test`
+## 📷 Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div>
+  <img src="https://user-images.githubusercontent.com/107365512/199672980-b5a65e0e-04cd-4886-b5d4-a5071a5ab2c2.gif" width="400" height="250">
+  <img src="https://user-images.githubusercontent.com/107365512/199673078-d30c6194-2c35-498f-84d3-5fe57413bd20.png" width="200" height="400">
+  <img src="https://user-images.githubusercontent.com/107365512/199673064-8cdd1a29-d894-42d1-80d2-f350d4c86ab1.png" width="180" height="400">
+  <img src="https://user-images.githubusercontent.com/107365512/199673070-818e9175-2b60-4fd2-b000-99f50bcab684.png" width="200" height="400">
+</div>
 
-### `npm run build`
+## What i learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* I strengthened my React knowledge with this project.
