@@ -1,18 +1,16 @@
 # Quizzical
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Quiz WebApp that access trivia questions from the Open Trivia Database API and score players based on their answers. Multiple game options like difficulty and category are available for the player to change.
 
-## Available Scripts
+This is the final Solo Project of Bob Ziroll's React Course on Scrimba developed from scratch by me.
+Link to project: https://quizzical-p.netlify.app/
 
-In the project directory, you can run:
+## ⚒️Built With:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+HTML 5
+CSS 3
+JavaScript
+React - JS library
 
 ### `npm test`
 
