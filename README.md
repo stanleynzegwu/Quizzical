@@ -2,7 +2,7 @@
 
 Quiz WebApp that access trivia questions from the Open Trivia Database API and score players based on their answers. The player have multiple game options to choose from - the number of questions, category, and difficulty or the default option if non of the options was selected.
 
-This is the final Solo Project of Bob Ziroll's React Course on Scrimba developed from scratch by me.
+This is the final Solo Project of Bob Ziroll's React Course on Scrimba developed from scratch by me.<br>
 Link to project: https://quizzical-p.netlify.app/
 
 ## ⚒️Built With:
